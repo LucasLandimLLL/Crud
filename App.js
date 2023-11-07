@@ -1,20 +1,17 @@
+import { NavigationContainer } from '@react-navigation/native';
+import 'react-native-gesture-handler';
 
-import { StyleSheet, Text, View } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
-
-import DrawerRouter from './src/routes/DrawerRouter';
-
+import DrawerRoutes from './src/routes/DrawerRoutes';
+import Toast from 'react-native-toast-message';
 
 export default function App() {
   return (
-   <PaperProvider>
-     {/* <Router></Router> */}
-     <DrawerRouter></DrawerRouter>
-     {/* <Routes></Routes> */}
-
-   </PaperProvider>
+    <PaperProvider>
+      <NavigationContainer>
+        <DrawerRoutes />
+      </NavigationContainer>
+      <Toast />
+    </PaperProvider>
   );
 }
-
-const styles = StyleSheet.create({
-});
