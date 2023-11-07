@@ -24,12 +24,13 @@ export default function FormAluno({ navigation, route }) {
     }, [])
 
     function salvar() {
+
         if (nome === '' || matricula === '' || turno === '' || curso === '') {
             setShowMensagemErro(true)
         } else {
             setShowMensagemErro(false)
 
-            const novoAluno = {
+            const alunoNovo = {
                 nome: nome,
                 matricula: matricula,
                 turno: turno,
@@ -37,9 +38,9 @@ export default function FormAluno({ navigation, route }) {
             }
 
             if (alunoAntigo) {
-                acao(alunoAntigo, novoAluno)
+                acao(alunoAntigo, alunoNovo)
             } else {
-                acao(novoAluno)
+                acao(alunoNovo)
             }
 
             Toast.show({
@@ -49,6 +50,7 @@ export default function FormAluno({ navigation, route }) {
 
             navigation.goBack()
         }
+
     }
 
     return (
@@ -74,17 +76,17 @@ export default function FormAluno({ navigation, route }) {
                 />
                 <TextInput
                     style={styles.input}
-                    label={'Curso'}
-                    mode='outlined'
-                    value={curso}
-                    onChangeText={text => setCurso(text)}
-                />
-                <TextInput
-                    style={styles.input}
                     label={'Turno'}
                     mode='outlined'
                     value={turno}
                     onChangeText={text => setTurno(text)}
+                />
+                <TextInput
+                    style={styles.input}
+                    label={'Curso'}
+                    mode='outlined'
+                    value={curso}
+                    onChangeText={text => setCurso(text)}
                 />
                 {showMensagemErro && (
                     <Text style={{ color: 'red', textAlign: 'center' }}>
