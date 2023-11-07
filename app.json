@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "formularios",
-    "slug": "formularios",
+    "name": "atv_tab_navigation",
+    "slug": "atv_tab_navigation",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
